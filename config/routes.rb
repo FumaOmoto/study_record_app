@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get "sessions/new"
-  get "users/new"
   # ルート
   root "static_pages#home"
 
