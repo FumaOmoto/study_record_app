@@ -10,5 +10,8 @@ Rails.application.routes.draw do
 
   # sign in, sign up
   get '/signup', to: 'users#new'
+
+  # Users リソース
+  resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
