@@ -19,8 +19,14 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+# ダミーデータの生成
+gem 'faker'
+# paginationの実装
+gem 'will_paginate', '~> 3.3.0'
+gem 'bootstrap-will_paginate', '~> 1.0.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -41,7 +47,8 @@ group :development do
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  # 追記: will_paginate gemとのエラーによりuninstall
+  # gem 'spring'
 end
 
 group :test do
