@@ -2,10 +2,15 @@ require "test_helper"
 
 class UsersIndexTest < ActionDispatch::IntegrationTest
   def setup
+    @user = users(:michael)
+    @other_user = users(:archer) #管理者ユーザ
     @users = User.paginate(page: 1)
   end
 
   test "should index including pagination" do
+    get login_path
+    log_in_as @other_user
+    assert is_logged_in?
     get users_path
     assert_template "users/index"
     assert_select "div.pagination", count: 2

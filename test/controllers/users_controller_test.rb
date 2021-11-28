@@ -3,6 +3,7 @@ require "test_helper"
 class UsersControllerTest < ActionDispatch::IntegrationTest
   def setup
     @user = users(:michael)
+    @other_user = users(:archer) #管理者ユーザ
   end
   
   test "should get signup" do
@@ -16,5 +17,12 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
                                        admin: true}}
     user = User.find_by(email: "cracker@example.com")
     assert_not user.admin?
+  end
+
+  test "should redirect destroy when not logged in" do
+    assert_no_difference "User.count" do
+      delete user_path(@user)
+    end
+    assert_redirected_to login_url
   end
 end
