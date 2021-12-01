@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    User.params[:id].destroy
+    User.find(params[:id]).destroy
     flash[:success] = "このユーザは削除されました"
     redirect_to users_path
   end
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
 
     #ログインしているか確認
     def logged_in_user
-      redirect_to login_path unless !current_user.nil?
+      redirect_to login_path unless logged_in?
     end
 
     #管理者かどうか確認
