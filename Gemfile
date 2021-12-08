@@ -24,6 +24,8 @@ gem 'faker'
 # paginationの実装
 gem 'will_paginate', '~> 3.3.0'
 gem 'bootstrap-will_paginate', '~> 1.0.0'
+# Bootstrapの追加
+gem 'bootstrap-sass', '~> 3.4.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 
