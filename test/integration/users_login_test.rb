@@ -29,6 +29,16 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     delete logout_path
   end
 
+  test "home show login when not logged in" do
+    post login_path, params: { session: { email: @user.email, 
+                                          password: "password" }}
+    get root_path
+    assert_select "a.navbar-link", "ログアウト"
+    delete logout_path
+    get root_path
+    assert_select "a.navbar-link", "ログイン"
+  end
+
   test "login with remembering" do
     log_in_as(@user, remember_me: "1")
     assert_not_empty cookies[:remember_token]

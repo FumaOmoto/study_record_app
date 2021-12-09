@@ -3,7 +3,9 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 @import "bootstrap-sprockets";
 @import "bootstrap";
+body.home{
 
-.home{
-    margin: 70px;
+    div.jumbotron{
+    padding-left: 40px;
+    }
 }

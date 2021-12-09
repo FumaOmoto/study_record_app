@@ -1,5 +1,9 @@
 <% provide( :title, "Home" ) %>
-<%= link_to "スタレコ", '/' %>
-<li><%= link_to "Home", '/home' %></li>
-<li><%= link_to "Help", '/help' %></li>
-<li><%= link_to "About", '/about' %></li>
+<!-- navバー -->
+<%= render :partial => "navbar" %>
+
+<div class="jumbotron">
+	<h1>スタレコ</h1>
+	<p>勉強した内容を共有、閲覧できるサービス</p>
+	<p><a class="btn btn-primary btn-lg" href="/signup" role="button">新規登録</a></p>
+</div>
