@@ -1,18 +1,36 @@
 <% provide( :title, "Sign up" ) %>
+<%= render :partial => "static_pages/navbar" %>
 <%= form_with( model: @user, local: true ) do |f| %>
-    <%= render  'shared/error_messages' %>
-
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-
-    <%= f.submit "Create my account"%>
+  <%= render  'shared/error_messages' %>
+  <div class="row">
+    <div class="col-2">
+     <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+    </div>
+    <div class="col-2">
+      <div class="form-group">           
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+      </div>
+    </div>
+    <div class="col-2">
+      <div class="form-group">   
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div>
+    </div>
+    <div class="col-2">
+      <div class="form-group">   
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %>
+      </div>
+    </div>
+    <div class="col-2 align-self-end">
+      <div class="form-group"> 
+        <%= f.submit "Create my account"%>
+      </div>
+    </div>
+  </div>
 <% end %>
