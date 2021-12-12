@@ -39,6 +39,25 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_select "a.navbar-link", "ログイン"
   end
 
+  test "should navbar show gravatar when logged in" do
+    post login_path, params: { session: { email: @user.email, 
+                                          password: "password" }}
+    get root_path
+    assert_select "img[alt=?]", @user.name
+    get help_path
+    assert_select "img[alt=?]", @user.name
+    get about_path 
+    assert_select "img[alt=?]", @user.name
+    get signup_path
+    assert_select "img[alt=?]", @user.name
+    get login_path 
+    assert_select "img[alt=?]", @user.name
+    get users_path 
+    assert_select "img[alt=?]", @user.name
+    get @user
+    assert_select "img[alt=?]", @user.name
+  end
+
   test "login with remembering" do
     log_in_as(@user, remember_me: "1")
     assert_not_empty cookies[:remember_token]
