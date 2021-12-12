@@ -12,15 +12,16 @@ class UsersController < ApplicationController
   end
   
   def new
-    @user = User.new
+    @user = current_user if logged_in?
+    @user_signup = User.new
   end
 
   def create
-    @user = User.new(user_params)
-    if @user.save
-      log_in @user
+    @user_signup = User.new(user_params)
+    if @user_signup.save
+      log_in @user_signup
       flash[:success] = "スタレコへようこそ！"
-      redirect_to user_path(@user)
+      redirect_to user_path(@user_signup)
     else
       render 'new'
     end

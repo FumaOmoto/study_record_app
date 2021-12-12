@@ -1,7 +1,7 @@
-<% if @user.errors.any? %>
+<% if @user_signup.errors.any? %>
   <div id="error_explanation">
-    <%= pluralize( @user.errors.count, "error" ) %>
-    <% @user.errors.full_messages.each do |msg| %>
+    <%= pluralize( @user_signup.errors.count, "error" ) %>
+    <% @user_signup.errors.full_messages.each do |msg| %>
     <li><%= msg %></li>
     <% end %>
   </div>

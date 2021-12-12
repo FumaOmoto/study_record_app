@@ -50,11 +50,9 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_select "img[alt=?]", @user.name
     get signup_path
     assert_select "img[alt=?]", @user.name
-    get login_path 
-    assert_select "img[alt=?]", @user.name
     get users_path 
     assert_select "img[alt=?]", @user.name
-    get @user
+    get user_path(@user)
     assert_select "img[alt=?]", @user.name
   end
 

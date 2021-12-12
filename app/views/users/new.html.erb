@@ -1,6 +1,6 @@
 <% provide( :title, "Sign up" ) %>
 <%= render :partial => "static_pages/navbar" %>
-<%= form_with( model: @user, local: true ) do |f| %>
+<%= form_with( model: @user_signup, local: true ) do |f| %>
   <%= render  'shared/error_messages' %>
   <div class="row">
     <div class="col-2">
