@@ -8,3 +8,15 @@ body[class="users new"]{
     margin-left: 50px;
   }
 }
+body[class="users create"]{
+    
+  div.row{
+    margin-left: 50px;
+  }
+  div#error_explanation{
+    margin-left: 50px;
+    *{
+      color: red;
+    }
+  }
+}
