@@ -1,4 +1,4 @@
-<% provide( title: @user.name ) %>
+<% provide(:title, @user.name) %>
 <%= render :partial => "static_pages/navbar" %>
 
 <%= gravatar_for @user %>
