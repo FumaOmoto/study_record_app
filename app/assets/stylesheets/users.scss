@@ -20,3 +20,35 @@ body[class="users create"]{
     }
   }
 }
+body[class="users show"]{
+  aside{
+    img{
+      padding-left: 20px;
+    }
+  }
+  .post{
+    list-style: none;
+    padding: 0;
+    li{
+      padding: 10px 0;
+      border-top: 1px solid #e8e8e8;
+    }
+    .post-title{
+      margin-top: 5em;
+      padding-top: 0;
+    }
+    .post-body{
+      display: block;
+      margin-left: 60px;
+      img {
+        display: block;
+        padding: 5px 0;
+      }
+    }
+    .post-timestamp{
+      color: lightgray;
+      display: block;
+      margin-left: 60px;
+    }
+  }
+}

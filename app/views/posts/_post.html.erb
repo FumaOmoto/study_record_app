@@ -1,7 +1,7 @@
 <li>
-  <span class="title"><%= post.title %></span>
-  <span class="body"><%= post.body %></span>
-  <span class="timestamp">
-    <%= time_ago_in_words(post.created_at) %>
+  <span class="post-title"><%= post.title %></span>
+  <span class="post-body"><%= post.body.slice(0..20) %></span>
+  <span class="post-timestamp">
+    <%= time_ago_in_words(post.created_at) %>前に投稿
   </span>
 </li>
