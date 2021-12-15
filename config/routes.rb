@@ -9,13 +9,16 @@ Rails.application.routes.draw do
   # sign in, sign up
   get "/signup", to: "users#new"
 
-  # Users リソース
+  # Usersリソース
   resources :users
 
-  # Sessions リソース
+  # Sessionsリソース
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+
+  # Postsリソース
+  resources :posts
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
