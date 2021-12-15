@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user = current_user if logged_in?
     @user_signup = User.new(user_params)
     if @user_signup.save
       log_in @user_signup
