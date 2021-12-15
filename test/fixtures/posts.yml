@@ -1,11 +1,25 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  body: MyText
-  user: one
+orange:
+  title: "orange title"
+  body: "this is orange's body"
+  created_at: <%= 10.minute.ago %>
+  user: michael
 
-two:
-  title: MyString
-  body: MyText
-  user: two
+grape:
+  title: "title for grape"
+  body: "grape is very delicious"
+  created_at: <%= 3.years.ago %>
+  user: michael
+
+doggo:
+  title: "doggo"
+  body: "doggo doggo doggo"
+  created_at: <%= 2.hours.ago %>
+  user: michael
+
+most_recent:
+  title: "title for most_recent"
+  body: "this is body for most_recent"
+  created_at: <%= Time.zone.now %>
+  user: michael
