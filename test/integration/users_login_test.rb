@@ -67,4 +67,12 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     log_in_as(@user, remember_me: "0")
     assert_empty cookies[:remember_token]
   end
+
+  test "should friendly-forwarding" do
+    get users_path
+    assert_redirected_to login_url
+    post login_path, params: { session: { email: @user.email, 
+                                          password: "password" }}
+    assert_redirected_to users_url                       
+  end
 end

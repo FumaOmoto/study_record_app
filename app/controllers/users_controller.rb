@@ -46,11 +46,6 @@ class UsersController < ApplicationController
                                     :password_confirmation, )
     end
 
-    #ログインしているか確認
-    def logged_in_user
-      redirect_to login_path unless logged_in?
-    end
-
     #管理者かどうか確認
     def admin_user
       redirect_to(root_path) unless current_user.admin?
