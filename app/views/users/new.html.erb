@@ -1,7 +1,7 @@
 <% provide( :title, "Sign up" ) %>
 <%= render :partial => "static_pages/navbar" %>
 <%= form_with( model: @user_signup, local: true ) do |f| %>
-  <%= render  'shared/error_messages' %>
+  <%= render 'shared/error_messages', object: f.object %>
   <div class="row">
     <div class="col-2">
      <div class="form-group">

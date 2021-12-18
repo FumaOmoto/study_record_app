@@ -1,0 +1,9 @@
+<% provide(:title, "New post") %>
+<%= render :partial => "static_pages/navbar" %>
+
+<%= form_with(model: @post_create, local: true) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <%= f.text_field :title %>
+  <%= f.text_area :body %>
+  <%= f.submit "投稿する" %>
+<% end %>
