@@ -1,9 +1,21 @@
 <% provide(:title, "New post") %>
 <%= render :partial => "static_pages/navbar" %>
 
-<%= form_with(model: @post_create, local: true) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <%= f.text_field :title %>
-  <%= f.text_area :body %>
-  <%= f.submit "投稿する" %>
-<% end %>
+<div class="container-fluid">
+  <%= form_with(model: @post_create, local: true) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+    <div class="row title">
+      <div class="col-xs-12">
+      <%= f.text_field :title, placeholder: "タイトル" %>
+      </div>
+    </div>
+    <div class="row body">
+      <div class="col-xs-12">
+        <%= f.text_area :body %>
+      </div>
+    </div>
+    <div class="row submit">
+    <%= f.submit "投稿する" %>
+    </div>
+  <% end %>
+</div>

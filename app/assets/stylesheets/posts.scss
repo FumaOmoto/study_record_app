@@ -1,3 +1,41 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+body[class="posts create"],
+body[class="posts new"]{
+  height: 100%;
+  div.container-fluid{
+    height: 100%;
+  }
+  form{
+    height: 100%;
+  }
+  div#error_explanation{
+    margin-left: 50px;
+    *{
+      color: red;
+    }
+  }
+  div[class="row title"]{
+    height: 15%;
+  }
+  div[class="row body"]{
+    height: 80%;
+  }
+  div[class="row submit"]{
+    height: 5%;
+    padding-left: 15px;
+  }
+  div.col-xs-12{
+    height: 100%;
+  }
+  input[type="text"]{
+    height: 100%;
+    width: 100%;
+  }
+  textarea{
+    height: 100%;
+    width: 100%;
+  }
+}
