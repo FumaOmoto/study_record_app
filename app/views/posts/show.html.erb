@@ -1,0 +1,16 @@
+<% provide(:title, @post.title ) %>
+<%= render :partial => "static_pages/navbar" %>
+
+<div class="container-fluid">
+
+  <div class="row title">
+    <div class="col-xs-12">
+      <h2><%= @post.title %></h2>
+    </div>
+  </div>
+  <div class="row body">
+    <div class="col-xs-12">
+      <p><%= @post.body %>
+    </div>
+  </div>
+</div>

@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 body[class="posts create"],
-body[class="posts new"]{
+body[class="posts new"],
+body[class="posts show"]{
   height: 100%;
   div.container-fluid{
     height: 100%;
@@ -33,9 +34,11 @@ body[class="posts new"]{
   input[type="text"]{
     height: 100%;
     width: 100%;
+    font-size: 40px;
   }
   textarea{
     height: 100%;
     width: 100%;
+    font-size: 25px;
   }
 }
