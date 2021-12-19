@@ -34,8 +34,8 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    User.find(params[:id]).destroy
-    flash[:success] = "このユーザは削除されました"
+    User.find(params[:id]).destroy!
+    flash[:success] = "ユーザは削除されました"
     redirect_to users_path
   end
 
@@ -48,6 +48,9 @@ class UsersController < ApplicationController
 
     #管理者かどうか確認
     def admin_user
-      redirect_to(root_path) unless current_user.admin?
+      unless current_user.admin?
+        flash[:danger] = "管理者権限を持っていません"
+        redirect_to(root_path)
+      end
     end
 end
