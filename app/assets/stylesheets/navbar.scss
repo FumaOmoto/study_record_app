@@ -1,8 +1,8 @@
 //navbar用のcssファイル
 
-nav[class="navbar navbar-default"]{
+nav[class="navbar navbar-default navbar-inverse"]{
 
-  button[class="btn btn-default dropdown-toggle"]{
+  div[class="dropdown navbar-right"]{
     margin-top: 4px;
   }
 }

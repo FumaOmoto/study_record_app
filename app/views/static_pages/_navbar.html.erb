@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-inverse">
 	<div class="container-fluid">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample1">
@@ -35,18 +35,19 @@
       <% else %>
         <p class="navbar-text navbar-right"> <%= link_to "ログアウト", "/logout", {method: :delete, class: "navbar-link"} %> </p>
       <% end %>
-      <p class="navbar-text navbar-right"> <a href="/signup" class="navbar-link">新規登録</a> </p>
+        <p class="navbar-text"> <a href="/posts/new" class="navbar-link">記事を記録・投稿する</a> </p>
+        <p class="navbar-text navbar-right"> <a href="/signup" class="navbar-link">新規登録</a> </p>
       <% if logged_in? %>
-      <div class="dropdown navbar-right">
-	      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-          <%= gravatar_for @user, size: 28 %>
-		      <span class="caret"></span>
-	      </button>
-        <ul class="dropdown-menu" role="menu">
-          <li role="presentation"><a href="/users/<%= @user.id %>">ユーザ情報</a></li>
-          <li role="presentation"><a href="/users">ユーザ一覧</a></li>
-        </ul>
-      </div>
+        <div class="dropdown navbar-right">
+          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+            <%= gravatar_for @user, size: 28 %>
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a href="/users/<%= @user.id %>">ユーザ・記事情報</a></li>
+            <li role="presentation"><a href="/users">ユーザ一覧</a></li>
+          </ul>
+        </div>
       <% end %>
 		</div>
 	</div>
