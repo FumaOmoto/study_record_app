@@ -1,16 +1,20 @@
 <% provide(:title, @post.title ) %>
 <%= render :partial => "static_pages/navbar" %>
 
-<div class="container-fluid">
-
-  <div class="row title">
-    <div class="col-xs-12">
-      <h2><%= @post.title %></h2>
+<div class="container">
+  <div class="content">
+    <div class="row title">
+      <h1><%= @post.title %></h1>
     </div>
-  </div>
-  <div class="row body">
-    <div class="col-xs-12">
-      <p><%= @post.body %>
+    <div class="row body">
+      <%=safe_join(@post.body.split("\n"),tag(:br))%>
+    </div>
+    <div class="user-info">
+      <%= gravatar_for @user, size: 50 %>
+      <%= link_to @user.name, @user %>
+    </div>
+    <div class="post-info">
+      投稿日：<%= @post.created_at %>
     </div>
   </div>
 </div>

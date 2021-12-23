@@ -2,9 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-body[class="posts create"],
-body[class="posts new"],
 body[class="posts show"]{
+  background-color: #EEEEEE;
+
+  div.content{
+    background-color: white;
+    margin: 5%;
+  }
+  div[class="row title"]{
+    margin: 0;
+    h1{
+      margin: 1% 2%;
+    }
+  }
+  div[class="row body"]{
+    margin: 2% 2%;
+    font-size: large;
+  }
+  div.user-info{
+    margin: 5% 1% 1% 1%;
+  }
+  div.post-info{
+    margin: 1%;
+  }
+}
+body[class="posts create"],
+body[class="posts new"]{
   height: 100%;
   div.container-fluid{
     height: 100%;
