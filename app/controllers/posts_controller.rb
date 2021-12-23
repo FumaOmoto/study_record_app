@@ -7,6 +7,10 @@ class PostsController < ApplicationController
     @post = current_user.posts.find_by(id: params[:id])
   end
 
+  def index 
+    @user = current_user if logged_in?
+  end
+
   def new
     @user = current_user
     @post_create = current_user.posts.build

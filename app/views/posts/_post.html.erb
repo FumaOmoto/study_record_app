@@ -1,5 +1,17 @@
 <li>
-  <span class="post-title"><%= post.title %></span>
+  <div>
+    <span class="post-title">
+      <%= link_to post.title, post %>
+    </span>
+    <% if logged_in? %>
+      <% if current_user.admin? || @user == current_user %>
+        <span class="post-delete"> 
+          | <%= link_to "削除", post, method: :delete,
+                      data: {confirm: "本当に削除しますか？"} %>
+        </span>
+      <% end %>
+    <% end %>
+  </div>
   <span class="post-body"><%= post.body.slice(0..20) %></span>
   <span class="post-timestamp">
     <%= time_ago_in_words(post.created_at) %>前に投稿

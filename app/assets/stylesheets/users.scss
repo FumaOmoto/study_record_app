@@ -30,10 +30,14 @@ body[class="users show"]{
     .post-title{
       margin-top: 5em;
       padding-top: 0;
+      font-size: large;
+      a{
+        color: black;
+      }
     }
     .post-body{
       display: block;
-      margin-left: 60px;
+      margin-left: 30px;
       img {
         display: block;
         padding: 5px 0;
