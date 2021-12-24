@@ -9,6 +9,7 @@ class PostsController < ApplicationController
 
   def index 
     @user = current_user if logged_in?
+    @posts = 
   end
 
   def new
@@ -48,6 +49,11 @@ class PostsController < ApplicationController
     @post.destroy!
     flash[:success] = "削除されました"
     redirect_to has_this_post(@post)
+  end
+
+  def search 
+    @posts = Post.search(params[:keyword])
+    @keyword = params[:keyword]
   end
 
   private

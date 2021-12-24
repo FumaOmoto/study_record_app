@@ -36,6 +36,14 @@
         <p class="navbar-text navbar-right"> <%= link_to "ログアウト", "/logout", {method: :delete, class: "navbar-link"} %> </p>
       <% end %>
         <p class="navbar-text"> <a href="/posts/new" class="navbar-link">記事を記録・投稿する</a> </p>
+        <div class="search-form">
+          <%= form_with url: search_path, method: :get, local: true, class: "navbar-form navbar-left" do |f| %>
+            <div class="form-group">
+              <%= f.text_field :keyword, value: @keyword, class: "form-control", placeholder: "投稿を検索する" %>
+            </div>
+            <%= f.submit "検索" %>
+          <% end %>
+        </div>
         <p class="navbar-text navbar-right"> <a href="/signup" class="navbar-link">新規登録</a> </p>
       <% if logged_in? %>
         <div class="dropdown navbar-right">
