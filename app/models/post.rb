@@ -6,7 +6,7 @@ class Post < ApplicationRecord
   validates :body, presence: true, length: {maximum: 3000}
 
   #keywordに一致する記事を返す
-  def User.search(keyword)
+  def Post.search(keyword)
     where(["title like? OR body like?", "%#{keyword}%", "%#{keyword}%"])
   end
 end

@@ -9,7 +9,6 @@ class PostsController < ApplicationController
 
   def index 
     @user = current_user if logged_in?
-    @posts = 
   end
 
   def new
