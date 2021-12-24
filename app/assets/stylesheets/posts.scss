@@ -10,7 +10,6 @@ body[class="posts show"]{
     margin: 5%;
   }
   div[class="row title"]{
-    margin: 0;
     h1{
       margin: 1% 2%;
     }
@@ -26,8 +25,10 @@ body[class="posts show"]{
     margin: 1%;
   }
 }
+body[class="posts new"],
 body[class="posts create"],
-body[class="posts new"]{
+body[class="posts edit"],
+body[class="posts update"]{
   height: 100%;
   div.container-fluid{
     height: 100%;

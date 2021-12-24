@@ -1,0 +1,21 @@
+<% provide(:title, "\"#{@post.title}\"の編集" ) %>
+<%= render :partial => "static_pages/navbar" %>
+
+<div class="container-fluid">
+  <%= form_with(model: @post, local: true) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+    <div class="row title">
+      <div class="col-xs-12">
+      <%= f.text_field :title, placeholder: "タイトル" %>
+      </div>
+    </div>
+    <div class="row body">
+      <div class="col-xs-12">
+        <%= f.text_area :body %>
+      </div>
+    </div>
+    <div class="row submit">
+    <%= f.submit "編集する" %>
+    </div>
+  <% end %>
+</div>

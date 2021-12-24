@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :logged_in_user, only: [:new, :create, :destroy]
-  before_action :correct_user, only: :destroy
+  before_action :correct_user, only: [:destroy, :edit, :update]
 
   def show 
     @user = current_user if logged_in?
@@ -27,10 +27,26 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    @user = current_user
+    @post = Post.find_by(id: params[:id])
+  end
+
+  def update
+    @user = current_user
+    @post = Post.find_by(id: params[:id])
+    if @post.update(post_params)
+      flash[:success] = "編集されました"
+      redirect_to has_this_post(@post)
+    else
+      render "edit"
+    end
+  end
+
   def destroy
     @post = Post.find_by(id: params[:id])
     @post.destroy!
-    flash[:success] = "投稿は削除されました"
+    flash[:success] = "削除されました"
     redirect_to has_this_post(@post)
   end
 
