@@ -21,19 +21,35 @@ class UsersShowTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test "should including delete link when correct user" do
+  test "should including delete link when correct user or admin" do
     log_in_as @user
     get user_path(@user)
     assert_template "users/show"
     @first_page_of_posts.each do |post|
-      assert_select "a[data-confirm=本当に削除しますか？]", text: "削除"
+      assert_select "span.post-destroy", text: "| 削除"
     end
     delete user_path(@user)
     log_in_as @admin
     get user_path(@user)
     assert_template "users/show"
     @first_page_of_posts.each do |post|
-      assert_select "a[data-confirm=本当に削除しますか？]", text: "削除"
+      assert_select "span.post-destroy", text: "| 削除"
+    end
+  end
+
+  test "should including edit link when correct user or admin" do
+    log_in_as @user
+    get user_path(@user)
+    assert_template "users/show"
+    @first_page_of_posts.each do |post|
+      assert_select "span.post-edit", text: "| 編集"
+    end
+    delete user_path(@user)
+    log_in_as @admin
+    get user_path(@user)
+    assert_template "users/show"
+    @first_page_of_posts.each do |post|
+      assert_select "span.post-edit", text: "| 編集"
     end
   end
 end
