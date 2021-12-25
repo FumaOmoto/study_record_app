@@ -2,15 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-body[class="sessions new"]{
-    
-  div.row{
-    margin-left: 50px;
-  }
-}
+body[class="sessions new"],
 body[class="sessions create"]{
     
   div.row{
     margin-left: 50px;
+    margin-top: 25px;
   }
 }

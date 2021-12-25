@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   def show 
     @user = current_user if logged_in?
-    @post = current_user.posts.find_by(id: params[:id])
+    @post = Post.find_by(id: params[:id])
   end
 
   def index 
@@ -50,9 +50,12 @@ class PostsController < ApplicationController
     redirect_to has_this_post(@post)
   end
 
-  def search 
+  def search
+    @user = current_user if logged_in?
     @posts = Post.search(params[:keyword])
+    @posts = @posts.page(params[:page])
     @keyword = params[:keyword]
+    render "index"
   end
 
   private

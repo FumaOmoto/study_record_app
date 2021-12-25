@@ -10,8 +10,8 @@
       <%=safe_join(@post.body.split("\n"),tag(:br))%>
     </div>
     <div class="user-info">
-      <%= gravatar_for @user, size: 50 %>
-      <%= link_to @user.name, @user %>
+      <%= gravatar_for has_this_post(@post), size: 50 %>
+      <%= link_to has_this_post(@post).name, has_this_post(@post) %>
     </div>
     <div class="post-info">
       投稿日：<%= @post.created_at %>

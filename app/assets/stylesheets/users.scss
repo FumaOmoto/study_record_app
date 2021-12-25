@@ -2,10 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-body[class="users create"] , body[class="users new"]{
+body[class="users create"],
+body[class="users new"]{
     
   div.row{
     margin-left: 50px;
+    margin-top: 25px;
   }
   div#error_explanation{
     margin-left: 50px;

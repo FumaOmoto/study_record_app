@@ -2,8 +2,8 @@
 <%= render :partial => "static_pages/navbar" %>
 
 <div class="post-list">
-  <% if @user.posts.any? %>
-    <h3>投稿 (<%= @user.posts.count %>)</h3>
+  <% if @posts.any? %>
+    <h3>投稿 (<%= @posts.count %>)</h3>
     <ol class="post">
       <%= render @posts %>
     </ol>
