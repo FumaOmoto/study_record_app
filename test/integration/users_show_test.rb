@@ -4,7 +4,7 @@ class UsersShowTest < ActionDispatch::IntegrationTest
   def setup
     @user = users(:michael)
     @admin = users(:archer)
-    @first_page_of_posts = Post.paginate(page: 1)
+    @first_page_of_posts = @user.posts.paginate(page: 1)
   end
 
   test "should including pagination" do
@@ -16,6 +16,7 @@ class UsersShowTest < ActionDispatch::IntegrationTest
   test "should including post link" do
     get user_path(@user)
     assert_template "users/show"
+    assert_select "div.pagination", count: 1
     @first_page_of_posts.each do |post|
       assert_select "a[href=?]", post_path(post), text: post.title
     end

@@ -32,7 +32,7 @@ class PostTest < ActiveSupport::TestCase
   end
 
   test "body should be at most 3000 characters" do
-    @post.body = "a"*3001
+    @post.body = "a"*6001
     assert_not @post.valid?
   end
 

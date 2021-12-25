@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+apple:
+  content: "apple comment"
+  created_at: <%= 10.minute.ago %>
+  user: michael
+  post: other_user_post
+
+grape:
+  content: "comment for grape"
+  created_at: <%= 3.years.ago %>
+  user: michael
+  post: other_user_post
+
+doggo:
+  content: "doggo comment"
+  created_at: <%= 2.hours.ago %>
+  user: michael
+  post: other_user_post
+
+most_recent:
+  content: "comment for most_recent"
+  created_at: <%= Time.zone.now %>
+  user: michael
+  post: other_user_post
