@@ -1,28 +1,21 @@
 Rails.application.routes.draw do  
-  # ルート
   root "static_pages#home"
 
-  # StaticPages
   get "/help", to: "static_pages#help"
   get "/about", to: "static_pages#about"
 
-  # sign in, sign up
   get "/signup", to: "users#new"
 
-  # Usersリソース
-  resources :users
+  resources :users, :except => :new  
 
-  # Sessionsリソース
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
-  # Postsリソース
-  resources :posts
+  resources :posts do
+    resources :comments, :only =>[:create, :destroy]
+  end
   get "/search", to: "posts#search"
-
-  # Commentsリソース
-  post "/comment", to: "comments#create"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

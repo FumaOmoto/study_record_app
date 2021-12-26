@@ -5,24 +5,31 @@
 body[class="posts show"]{
   background-color: #EEEEEE;
 
-  div.content{
+  div.post-content{
     background-color: white;
     margin: 5%;
-  }
-  div[class="row title"]{
-    h1{
-      margin: 1% 2%;
+
+    div[class="row title"]{
+      h1{
+        margin: 1% 2%;
+      }
+    }
+    div[class="row body"]{
+      margin: 2% 2%;
+      font-size: large;
+    }
+    div.user-info{
+      margin: 5% 1% 1% 1%;
+    }
+    div.post-info{
+      margin: 1%;
     }
   }
-  div[class="row body"]{
-    margin: 2% 2%;
-    font-size: large;
+  div.comment-content{
+    
   }
-  div.user-info{
-    margin: 5% 1% 1% 1%;
-  }
-  div.post-info{
-    margin: 1%;
+  div.create-comment{
+
   }
 }
 body[class="posts index"],
@@ -70,39 +77,40 @@ body[class="posts create"],
 body[class="posts edit"],
 body[class="posts update"]{
   height: 100%;
-  div.container-fluid{
+  div[class="container-fluid content"]{
     height: 100%;
-  }
-  form{
-    height: 100%;
-  }
-  div#error_explanation{
-    margin-left: 50px;
-    *{
-      color: red;
+
+    form{
+      height: 100%;
     }
-  }
-  div[class="row title"]{
-    height: 15%;
-  }
-  div[class="row body"]{
-    height: 80%;
-  }
-  div[class="row submit"]{
-    height: 5%;
-    padding-left: 15px;
-  }
-  div.col-xs-12{
-    height: 100%;
-  }
-  input[type="text"]{
-    height: 100%;
-    width: 100%;
-    font-size: 40px;
-  }
-  textarea{
-    height: 100%;
-    width: 100%;
-    font-size: 25px;
+    div#error_explanation{
+      margin-left: 50px;
+      *{
+        color: red;
+      }
+    }
+    div[class="row title"]{
+      height: 15%;
+    }
+    div[class="row body"]{
+      height: 80%;
+    }
+    div[class="row submit"]{
+      height: 5%;
+      padding-left: 15px;
+    }
+    div.col-xs-12{
+      height: 100%;
+    }
+    input[type="text"]{
+      height: 100%;
+      width: 100%;
+      font-size: 40px;
+    }
+    textarea{
+      height: 100%;
+      width: 100%;
+      font-size: 25px;
+    }
   }
 }

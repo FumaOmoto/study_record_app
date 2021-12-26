@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-#管理者権限のあるユーザを作成
+#adminユーザを作成
 User.create!(name: "John", email: "John@example.com",
             password: "foobar", password_confirmation: "foobar",
             admin: true)
@@ -19,9 +19,18 @@ User.create!(name: "John", email: "John@example.com",
                password: "password", password_confirmation: "password")
 end
 
+# postを作成
 users = User.order(:created_at).take(5)
 50.times do
-  title = Faker::Lorem.sentence(word_count: 4)
-  body = Faker::Lorem.sentence(word_count: 10)
+  title = Faker::Lorem.sentence(word_count: 5)
+  body = Faker::Lorem.sentence(word_count: 1000)
   users.each {|user| user.posts.create!(title: title, body: body)}
+end
+
+# commentを作成
+users = User.order(:created_at).take(5)
+20.times do
+  content = Faker::Lorem.sentence(word_count: 100)
+  users.each {|user| user.comments.create!(content: content,
+                      post_id: user.posts.first.id)}
 end

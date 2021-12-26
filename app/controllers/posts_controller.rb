@@ -1,10 +1,14 @@
 class PostsController < ApplicationController
+  include PostsHelper
+
   before_action :logged_in_user, only: [:new, :create, :destroy]
   before_action :correct_user, only: [:destroy, :edit, :update]
 
   def show 
     @user = current_user if logged_in?
     @post = Post.find_by(id: params[:id])
+    @comments = @post.comments.paginate(page: params[:page], per_page: 5)
+    @comment_create = current_user.comments.build if logged_in?
   end
 
   def index 

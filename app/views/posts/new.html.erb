@@ -1,7 +1,7 @@
 <% provide(:title, "New post") %>
 <%= render :partial => "static_pages/navbar" %>
 
-<div class="container-fluid">
+<div class="container-fluid content">
   <%= form_with(model: @post_create, local: true) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
     <div class="row title">
