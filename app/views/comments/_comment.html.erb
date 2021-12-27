@@ -5,7 +5,7 @@
       <%= link_to has_this_comment(comment).name, has_this_comment(comment) %>
     </div>
     <% if logged_in? %>
-      <% if current_user.admin? || @user == current_user %>
+      <% if current_user.admin? || @user == has_this_comment(comment) %>
         <span class="comment-destroy"> 
           | <%= link_to "削除", post_comment_path(@post, comment), method: :delete,
                       data: {confirm: "本当に削除しますか？"} %>

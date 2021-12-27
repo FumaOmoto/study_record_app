@@ -1,15 +1,17 @@
-class CommentsController < ApplicationController
-  include CommentsHelper
-  
+class CommentsController < ApplicationController  
   before_action :logged_in_user, only: [:create, :destroy]
   before_action :correct_user, only: :destroy 
 
   def create
-    @comment = current_user.comments.build(comment_params)
-    if @comment.save
-      redirect_back(fallback_location: root_path)
-    else 
-      redirect_back(fallback_location: root_path)
+    @user = current_user
+    @post = Post.find_by(id: params[:post_id])
+    @comment_create = current_user.comments.build(comment_params)
+    @comments = @post.comments.paginate(page: params[:page], per_page: 5)
+    if @comment_create.save
+      flash[:success] = "コメントしました"
+      redirect_to @post
+    else
+      render "posts/show"
     end
   end
 

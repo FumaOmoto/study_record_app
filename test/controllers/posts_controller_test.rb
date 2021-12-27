@@ -36,8 +36,6 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
       delete post_path(@post)
     end
     assert_redirected_to has_this_post(@post)
-    follow_redirect!
-    assert_select "div.alert-danger"
   end
 
   test "destroy should delete post when correct user" do
@@ -46,8 +44,6 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
       delete post_path(@post)
     end
     assert_redirected_to has_this_post(@post)
-    follow_redirect!
-    assert_select "div.alert-success"
   end
 
   test "destroy should delete post when admin" do
@@ -56,16 +52,12 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
       delete post_path(@post)
     end
     assert_redirected_to has_this_post(@post)
-    follow_redirect!
-    assert_select "div.alert-success"
   end
 
   test "edit should redirect when not correct user or admin" do
     log_in_as @other_user
     get edit_post_path(@post)
     assert_redirected_to has_this_post(@post)
-    follow_redirect!
-    assert_select "div.alert-danger"
   end
 
   test "should show edit when correct user or admin" do
@@ -82,8 +74,6 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     patch post_path(@post), params: {post: {title: "valid", 
                                             body: "valid"}}
     assert_redirected_to user_path(@user)
-    follow_redirect!
-    assert_select "div.alert-danger"
   end
 
   test "should update post correctly when correct user or admin" do
@@ -91,14 +81,10 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     patch post_path(@post), params: {post: {title: "valid", 
                                             body: "valid"}}
     assert_redirected_to user_path(@user)
-    follow_redirect!
-    assert_select "div.alert-success"
     log_in_as @admin
     patch post_path(@post), params: {post: {title: "valid", 
                                             body: "valid"}}
     assert_redirected_to user_path(@user)
-    follow_redirect!
-    assert_select "div.alert-success"
   end
 
   test "should fail in updating post when invalid edit" do
@@ -106,6 +92,5 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     patch post_path(@post), params: {post: {title: "invalid",
                                             body: ""}}
     assert_template "posts/edit"
-    assert_select 'div#error_explanation'
   end
 end
