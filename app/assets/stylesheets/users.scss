@@ -52,3 +52,16 @@ body[class="users show"]{
     }
   }
 }
+body[class="users index"]{
+  
+  div.pagination{
+    margin-left: 2%;
+  }
+  ul{
+    list-style-type: none;
+    
+    li{
+      margin-top: 2%;
+    }
+  }
+}

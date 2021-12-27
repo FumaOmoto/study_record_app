@@ -1,4 +1,4 @@
-<% provide( :title, "Sign up" ) %>
+<% provide( :title, "新規登録" ) %>
 <%= render :partial => "static_pages/navbar" %>
 <%= form_with( model: @user_signup, local: true ) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>

@@ -32,7 +32,7 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
       post post_comments_path(@post), params: {comment: {content: "",
                                                          post_id: @post.id}}
     end
-    assert_template "posts/show"
+    assert_redirected_to post_path(@post)
   end
 
   test "destroy should redirect when not logged in" do

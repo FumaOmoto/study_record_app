@@ -21,5 +21,8 @@ module StudyRecordApp
     
     # デフォルトのlocaleを日本語(:ja)にする
     config.i18n.default_locale = :ja
+
+    #formの入力エラー時にdiv.field_with_errorsの生成を防ぐ
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }
   end
 end

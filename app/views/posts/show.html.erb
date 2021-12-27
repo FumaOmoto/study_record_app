@@ -19,8 +19,8 @@
   </div>
   <div class="comment-list">
     <div class="inner-comment-list">
+      <h4>(<%= @comments.count %>)件のコメント</h4>
       <% if @comments.any? %>
-        <h4>(<%= @comments.count %>)件のコメント</h4>
         <ul class="comment">
           <%= render @comments %>
         </ul>
@@ -29,7 +29,7 @@
     </div>    
   </div>
   <% if logged_in? %>
-    <div class="create-comment">
+    <div class="create-comment" id="main">
       <div class="inner-create-comment">
         <h4>コメントをする</h4>
         <%= form_with(model: [@post, @comment_create], local: true) do |f| %>
@@ -48,3 +48,4 @@
     </div>
   <% end %>
 </div>
+

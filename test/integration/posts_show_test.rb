@@ -40,4 +40,14 @@ class PostsShowTest < ActionDispatch::IntegrationTest
     get post_path(@post)
     assert_select "div.create-comment", count: 1
   end
+
+  test "comments' pagination link followed by invalid comment create" do
+    log_in_as @user
+    get post_path(@post)
+    post post_comments_path(@post), params: {comment: {content: "",
+                                                       post_id: @post.id }}
+    assert_redirected_to post_path(@post)
+    follow_redirect!
+    assert_select "a[href=?]", "/posts/#{@post.id}?page=1"
+  end
 end

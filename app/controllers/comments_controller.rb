@@ -11,7 +11,8 @@ class CommentsController < ApplicationController
       flash[:success] = "コメントしました"
       redirect_to @post
     else
-      render "posts/show"
+      flash[:danger] = @comment_create.errors.full_messages.join(" ")
+      redirect_to @post 
     end
   end
 
