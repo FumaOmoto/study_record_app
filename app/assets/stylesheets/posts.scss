@@ -25,11 +25,53 @@ body[class="posts show"]{
       margin: 1%;
     }
   }
-  div.comment-content{
+  div.comment-list{
+    background-color: white;
+    margin: 5%;
     
+    div.inner-comment-list{
+      padding: 2%;
+    }
+    ul.comment{
+      list-style-type: none;
+
+      div.one-comment{
+        margin: 2% 0 2% 0;
+      }
+      div.user-info{
+        font-size: large;
+      }
+      div.comment-content{
+        font-size: large;
+      }
+      div.comment-timestamp{
+        font-size: medium;
+        color: #808080;
+      }
+    }
   }
   div.create-comment{
+    background-color: white;
+    margin: 5% 25% 0% 25%;
+    height: 200px;
 
+    div.inner-create-comment{
+      padding: 2%;
+      height: 100%;
+    }
+    form, div[class="row content"]{
+      height: 80%;
+    }
+    div.col-xs-12{
+      height: 100%;
+    }
+    textarea{
+      width: 100%;
+      height: 80%;
+    }
+    div[class="row submit"]{
+      margin-left: 2%;
+    }
   }
 }
 body[class="posts index"],
