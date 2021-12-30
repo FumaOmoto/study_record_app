@@ -8,7 +8,8 @@
 
 #adminユーザを作成
 User.create!(name: "John", email: "John@example.com",
-            password: "foobar", password_confirmation: "foobar",
+            password: "foobar",
+            password_confirmation: "foobar",
             admin: true)
 
 #追加のユーザを作成
@@ -16,15 +17,18 @@ User.create!(name: "John", email: "John@example.com",
   name = Faker::Name.name 
   email = "example-#{n+1}@example.com"
   User.create!(name: name, email: email,
-               password: "password", password_confirmation: "password")
+               password: "password",
+               password_confirmation: "password")
 end
 
 # postを作成
 users = User.order(:created_at).take(5)
+categories = ["japanese", "math", "science", "social", "foreign lang", "others"]
 50.times do
   title = Faker::Lorem.sentence(word_count: 5)
   body = Faker::Lorem.sentence(word_count: 1000)
-  users.each {|user| user.posts.create!(title: title, body: body)}
+  category = categories.sample
+  users.each {|user| user.posts.create!(title: title, body: body, category: category)}
 end
 
 # commentを作成

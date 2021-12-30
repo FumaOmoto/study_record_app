@@ -6,6 +6,10 @@
     <div class="row title">
       <h1><%= @post.title %></h1>
     </div>
+    <div class="row category">
+      カテゴリー | <%= link_to category_to_name(@post.category),
+                          search_path(keyword: "", category: @post.category) %>
+    </div>
     <div class="row body">
       <%=safe_join(@post.body.split("\n"),tag(:br))%>
     </div>

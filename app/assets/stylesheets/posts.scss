@@ -15,6 +15,9 @@ body[class="comments create"]{
         margin: 1% 2%;
       }
     }
+    div[class="row category"]{
+      margin: 1% 2%;
+    }
     div[class="row body"]{
       margin: 2% 2%;
       font-size: large;
@@ -80,10 +83,9 @@ body[class="posts search"]{
   div.post-list{
     margin: 0 5% 0 5%;
   }
-  aside{
-    img{
-      padding-left: 20px;
-    }
+  div.search-info{
+    margin-top: 2%;
+    font-size: large;
   }
   .post{
     list-style: none;

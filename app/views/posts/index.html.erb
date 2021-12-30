@@ -2,8 +2,13 @@
 <%= render :partial => "static_pages/navbar" %>
 
 <div class="post-list">
+  <% if controller.action_name == "search" %>
+    <div class="search-info">
+      キーワード:"<%= @keyword%>",  カテゴリー:"<%= category_to_name(@category) %>"  の検索結果
+    </div>
+  <% end %>
+  <h3>投稿 (<%= @posts.count %>)</h3>
   <% if @posts.any? %>
-    <h3>投稿 (<%= @posts.count %>)</h3>
     <ol class="post">
       <%= render @posts %>
     </ol>

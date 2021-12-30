@@ -54,16 +54,17 @@ class PostsController < ApplicationController
 
   def search
     @user = current_user if logged_in?
-    @posts = Post.search(params[:keyword])
+    @posts = Post.search(params[:keyword], params[:category])
     @posts = @posts.page(params[:page])
     @keyword = params[:keyword]
+    @category = params[:category]
     render "index"
   end
 
   private
 
     def post_params
-      params.require(:post).permit(:title, :body)
+      params.require(:post).permit(:title, :body, :category)
     end
 
     def correct_user

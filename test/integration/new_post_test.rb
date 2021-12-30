@@ -9,7 +9,8 @@ class NewPostTest < ActionDispatch::IntegrationTest
   test "should show error messages when failed to create post" do
     log_in_as @user
     post posts_path, params: {post: {title: "invalid", body:" ",
-                                    user_id: @post.user.id}}
+                                     category: " ",
+                                     user_id: @post.user.id}}
     assert_template "posts/new"
     assert_select "div#error_explanation"
   end

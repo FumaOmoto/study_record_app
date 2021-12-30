@@ -4,7 +4,8 @@ class PostTest < ActiveSupport::TestCase
   def setup 
     @user = users(:michael)
     @post = @user.posts.build(title: "this is title",
-                              body: "this is body")
+                              body: "this is body",
+                              category: "math")
   end
 
   test "should be valid" do
@@ -33,6 +34,11 @@ class PostTest < ActiveSupport::TestCase
 
   test "body should be at most 3000 characters" do
     @post.body = "a"*6001
+    assert_not @post.valid?
+  end
+
+  test "category should be present" do
+    @post.category = " "
     assert_not @post.valid?
   end
 

@@ -40,6 +40,9 @@
           <%= form_with url: search_path, method: :get, local: true, class: "navbar-form navbar-left" do |f| %>
             <div class="form-group">
               <%= f.text_field :keyword, value: @keyword, class: "form-control", placeholder: "投稿を検索する" %>
+              <%= f.select :category, [["国語", "japanese"], ["数学", "math"], ["理科", "science"], 
+                                       ["社会", "social"], ["外国語", "foreign lang"], ["その他", "others"]],
+                                        {include_blank: "全て選択"} %>
             </div>
             <%= f.submit "検索" %>
           <% end %>

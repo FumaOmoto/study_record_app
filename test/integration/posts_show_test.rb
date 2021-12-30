@@ -50,4 +50,11 @@ class PostsShowTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_select "a[href=?]", "/posts/#{@post.id}?page=1"
   end
+
+  test "should show category" do
+    get post_path(@post)
+    assert_template "posts/show"
+    assert_select "a[href=?]", search_path(keyword: "", category: "math"),
+                          text: "数学"
+  end
 end
