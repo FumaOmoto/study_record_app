@@ -18,7 +18,8 @@
       <%= link_to has_this_post(@post).name, has_this_post(@post) %>
     </div>
     <div class="post-info">
-      投稿日：<%= @post.created_at %>
+      投稿日：<%= @post.created_at %> |
+      最終更新日：<%= @post.updated_at %>
     </div>
   </div>
   <div class="comment-list">
