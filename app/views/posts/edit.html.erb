@@ -9,6 +9,12 @@
       <%= f.text_field :title, placeholder: "タイトル" %>
       </div>
     </div>
+    <div class="row category">
+      <div class="col-xs-12">
+        カテゴリーを選択 <%= f.select :category, [["国語", "japanese"], ["数学", "math"], ["理科", "science"], 
+                                               ["社会", "social"], ["外国語", "foreign lang"], ["その他", "others"]] %>
+      </div>
+    </div>
     <div class="row body">
       <div class="col-xs-12">
         <%= f.text_area :body %>
