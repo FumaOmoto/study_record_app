@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+「スタレコ」
+・どんなサービス？
+中高生や大学生が勉強の過程をブログ形式で簡単に記録、公開できるようなサービス
 
-Things you may want to cover:
+・なぜ作ろうと思った？
+学習過程にいる人だからこそ学習者目線に近い視点に立った、インターネット上に溢れ
+ている「わかりやすい」記事にはないメリットが得られるものが書けるのではないかと
+考えた
+  ・友達同士でモチベーションアップ！
+  ・より近い目線のものが書けるため、わかりやすい！
+例えるなら、よくありがちな「先生より友達に教えてもらった方がわかりやすい」とい
+うことを利用したwebサービスといえる
 
-* Ruby version
 
-* System dependencies
+作ってみて思ったが技術力としてはもちろんのこと、サービスとしての課題点が多い。
+技術力をつけるのと同時に、有名なサービスと比較したりなどして利用したくなるよう
+なもっと独自の機能などをつけられたらいいと思う。
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+・課題点(随時変更)
+  ・
