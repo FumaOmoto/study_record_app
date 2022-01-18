@@ -1,5 +1,8 @@
 # README
 
+デプロイ先のherokuのurl
+https://desolate-castle-04843.herokuapp.com/
+
 ### 「スタレコ」 <br>
 
 #### ・どんなサービス？<br>
